@@ -4,36 +4,38 @@ The purpose of EasyFlask is to create template-esque Flask applications while no
 
 
 How does it do this?
-The meat of EasyFlask uses a modified ruamel.yaml parser in html_generator to take html tags like below and automatically turn it into an html document. All tags are ran through a list of current open and closed tags in HTML, filtering out 'attributes' for key-value pairs. 
+  The meat of EasyFlask uses a modified ruamel.yaml parser in html_generator to take html tags like below and automatically turn it into an html document. All tags are ran through a list of current open and closed tags in HTML, filtering out 'attributes' for key-value pairs. 
+
 
 Important notes:
-1. The main reason for modifying the yaml parser is so it can take duplicate keys. This is the crux of how the html is made.
-2. This is not able to parse both having a value pair, and attributes for it at the same time due to how the parser works, therefore 'content' elements are required for those. They will work universally, whereas a straight key-value pair will only work at the end of a tree.
+  1. The main reason for modifying the yaml parser is so it can take duplicate keys. This is the crux of how the html is made.
+  2. This is not able to parse both having a value pair, and attributes for it at the same time due to how the parser works, therefore 'content' elements are required for those. They will work universally, whereas a straight key-value pair will only work at the end of a tree.
+  
     Example:
-        title: Splash Page
+      title: Splash Page
 
-        and
+      and
 
-        title:
-            content:
-                text: Splash Page
+      title:
+        content:
+          text: Splash Page
 
-        and
+      and
 
-        title:
-            content:
-                text:
-                    Splash Page
-            attributes:
-                class: title_class
+      title:
+        content:
+          text:
+            Splash Page
+          attributes:
+            class: title_class
 
-        all work, but
+      all work, but
 
-        title: Splash Page
-            attributes:
-                class: title_class
+      title: Splash Page
+        attributes:
+          class: title_class
         
-        does not work.
+      does not work.
 
 
 Example EasyFlask file:
@@ -62,8 +64,22 @@ html:
         li: inspired
       footer:
 
+Python Usage Example app.py:
+  from Flask import Flask, render_template_string
+  from pathlib import Path
+  from EasyFlask.html_generator import HTMLGenerator
+
+  app = Flask(__name__)
+
+  @app.route('/')
+  def index():
+    file_in = Path('website_config.yaml')
+    html_generator = HTMLGenerator(file_in)
+    html_output = html_generator.generate_html()
+    return render_template_string(html_output)
+
 What's coming to EasyFlask next?
-I fully understand it's in a state that I wouldn't even use it over just jinja2 at the moment after the inital generation. The next few major updates are designed to add the following.
+  I fully understand it's in a state that I wouldn't even use it over just jinja2 at the moment after the inital generation. The next few major updates are designed to add the following.
 
     jinja2 compatability for cutting down further on the amount of individual elements needed while maintaining logic capabilities
     
@@ -74,11 +90,11 @@ I fully understand it's in a state that I wouldn't even use it over just jinja2 
     source builder file to output the code being run to a source folder of your choosing, for the times there is website specific functionality that hasn't been accounted for yet.
 
     
-    You're ready to install EasyFlask?
-    All you need to do is a standard install by
+You're ready to install EasyFlask?
+  All you need to do is a standard install by
 
     1. Cloning the repo with git
     2. cd into the EasyFlask-Repo
     3. run pip install dist/EasyFlask-1.0.tar.gz
 
-    If you're not worried about modifying the repo with your own improvements, feel free to download just the .tar.gz and install as normal with pip.
+  If you're not worried about modifying the repo with your own improvements, feel free to download just the .tar.gz and install as normal with pip.
