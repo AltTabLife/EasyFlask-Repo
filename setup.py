@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='EasyFlask',
@@ -6,6 +6,6 @@ setup(
     description='Flask generator package from a yaml file',
     author='TabBackIn',
     author_email='andrewm@tabbackin.com',
-    packages=['EasyFlask'],
+    packages=find_packages(),
     install_requires=['ruamel.yaml', 'pathlib'],
 )
