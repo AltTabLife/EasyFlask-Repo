@@ -1,6 +1,9 @@
 **/__pycache__/
 **/EasyFlask.egg-info/
 
+#Test files
+tester.py
+
 
 #Needs additional functionality and logic sorting before being worthy of a commit to the project. 
 debug_mode.py
