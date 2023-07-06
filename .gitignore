@@ -3,7 +3,7 @@
 
 #Test files
 tester.py
-
+**/output_src/
 
 #Needs additional functionality and logic sorting before being worthy of a commit to the project. 
 debug_mode.py
