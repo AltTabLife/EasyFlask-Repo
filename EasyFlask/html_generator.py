@@ -55,14 +55,8 @@ class HTMLGenerator:
 
         return html_string
 
-#    def generate_html(self):
-#        self.MyConstructor.add_constructor(
-#            'tag:yaml.org,2002:map', self.MyConstructor.construct_yaml_map
-#        )
-#        yaml = ruamel.yaml.YAML()
-#        yaml.Constructor = self.MyConstructor
-#        data = yaml.load(self.file_in)
-#
-#        html_string = self.html(data)
-#        return html_string
-#
+    def generate_html(self, html_construct):
+        html_string = self.html(html_construct)
+        return html_string
+
+        
