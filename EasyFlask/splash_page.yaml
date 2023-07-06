@@ -17,7 +17,7 @@
 #    page_name: *arg #Defines the page function name. If none is given, default to first route with text other than "/" which will equal index
 ##   route_list: [] #Routes for the page. If no route is given, generate the page and put it in templates/extras
 #    jinja: #Denotes the start of jinja processing, meant for extension and include processing
-#      template_name: *arg #Sets template name for creating the file
+#      template_name: *arg #Sets template name for creating the file. Defaults to page_name
 #      extends: *arg #Sets to extend a certain file
 #      html: #Example start of html for when building file
 #        jinja: #Denotes start of jinja processing
@@ -33,21 +33,23 @@
 #    page_name: index
 #    route_list: ['/', 'index']
 #Working block end
-
-html:
-  head:
-    title: Splash Page
-    meta:
-      attributes:
-        charset: utf-8
-    #link:
-    # attributes:
-    #   rel: stylesheet
-    #   href: link-to-css
-  body:
-    h1: Welcome to EasyFlask!
-    p: EasyFlask is primarily meant to build an entire flask application through a simple config file, without having to learn or write a massive amount of syntax to get it up and running. This primarily uses a parser like seen in the config for this page for down to earth html coding without having to deal with before/end tags, element/attribute syntax. instead, this is a simple wiremap that takes care of the legwork on the backend.
-    br:
-    h2: Coming Capabilities
-    p: While it only translates mostly direct HTML at the moment, this will be incorporating jinja2 blueprints to use multiple commonly paired tags and attributes in a snippet-like method, but allows you to lower the amount of typing required, not to mention lowering the brain overload.
-    footer:
+page:
+  page_name: index
+  route_list: ['/', 'index']
+  html:
+    head:
+      title: Splash Page
+      meta:
+        attributes:
+          charset: utf-8
+      #link:
+      # attributes:
+      #   rel: stylesheet
+      #   href: link-to-css
+    body:
+      h1: Welcome to EasyFlask!
+      p: EasyFlask is primarily meant to build an entire flask application through a simple config file, without having to learn or write a massive amount of syntax to get it up and running. This primarily uses a parser like seen in the config for this page for down to earth html coding without having to deal with before/end tags, element/attribute syntax. instead, this is a simple wiremap that takes care of the legwork on the backend.
+      br:
+      h2: Coming Capabilities
+      p: While it only translates mostly direct HTML at the moment, this will be incorporating jinja2 blueprints to use multiple commonly paired tags and attributes in a snippet-like method, but allows you to lower the amount of typing required, not to mention lowering the brain overload.
+      footer:
