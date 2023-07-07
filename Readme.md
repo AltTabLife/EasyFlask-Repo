@@ -11,6 +11,7 @@
   <ol>
     <li>The main reason for modifying the yaml parser is so it can take duplicate keys. This is the crux of how the html is made.</li>
     <li>This is not able to parse both having a value pair, and attributes for it at the same time due to how the parser works, therefore 'content' elements are required for those. They will work universally, whereas a straight key-value pair will only work at the end of a tree.</li>
+    <li>For a full explanation of how the program works, feel free to install and build off the splash_page.yamlish file</li>
   </ol>
 
 Example:
@@ -52,30 +53,33 @@ Example:
 <h3>Example EasyFlask file:</h3>
 
 ```yaml
-html:  
-  head:  
-    title: Splash Page  
-    link:  
-      attributes:  
-        href: path-to-css  
-  body:  
-    div:  
-      attributes:  
-        class: header_class  
-      h1: Nobody questions the spammish inspiration  
-      p: inspiration inspiration inspiration inspiration inspiration inspiration inspiration   
-    br:  
-    div:  
-      attributes:  
-        class: inspiration_realized  
-      h2: Conclusion  
-      ul:  
-        li: You  
-        li: Should  
-        li: Now  
-        li: be  
-        li: inspired  
-      footer:  
+page:
+  page_name: Splash_Page
+  route_list: ['/','/splash_page']
+  html:  
+    head:  
+      title: Splash Page  
+      link:  
+        attributes:  
+          href: path-to-css  
+    body:  
+      div:  
+        attributes:  
+          class: header_class  
+        h1: Nobody questions the spammish inspiration  
+        p: inspiration inspiration inspiration inspiration inspiration inspiration inspiration   
+      br:  
+      div:  
+        attributes:  
+          class: inspiration_realized  
+        h2: Conclusion  
+        ul:  
+          li: You  
+          li: Should  
+          li: Now  
+          li: be  
+          li: inspired  
+        footer:  
 ```
 
 <h3>Python Example app.py:</h3>
