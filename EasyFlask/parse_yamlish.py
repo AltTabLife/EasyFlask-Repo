@@ -1,6 +1,7 @@
 #Big shoutout to Anthon for providing the logic for translating the yaml parser when I was ready to just write my own. https://stackoverflow.com/questions/76552508/how-to-force-yaml-to-overlook-duplicate-keys/76553845#76553845
 
 import ruamel.yaml
+from pathlib import Path
 
 def parse_yamlish(file_in):
     class MyConstructor(ruamel.yaml.RoundTripConstructor):
@@ -29,5 +30,6 @@ def parse_yamlish(file_in):
 
     yaml = ruamel.yaml.YAML()
     yaml.Constructor = MyConstructor
+    file_in = Path(file_in)
     data = yaml.load(file_in)
     return data

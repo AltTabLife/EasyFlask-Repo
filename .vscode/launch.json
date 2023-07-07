@@ -14,7 +14,7 @@
             "program": "${workspaceFolder}${pathSeparator}tester.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "cwd":"${workspaceFolder}/"
+            "cwd":"${workspaceFolder}"
         }
     ]
 }

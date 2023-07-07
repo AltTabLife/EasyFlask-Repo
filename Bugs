@@ -1,0 +1,10 @@
+This is a basic text file to list the known bugs and features that need to be worked out
+
+
+1. Need concise way for in-line element handling such as <i>. Don't want to use another delimiter such as {{}} to conflict with jinja, not to mention this is supposed to be absolute minimal syntax. Need some type of parsing in content-text. For now, since it writes to a file, inline elements can be written as HTML.
+
+2. Need to modify page.page_name parser to turn filenames with spaces into underscores
+
+3. Needs verbose error handling throughout the entire project
+
+4. Need memory management before project gets to big and bricks RAM. Constructs are being rewritten throughout the project since tuples, so the old variables need to be discarded.
