@@ -102,7 +102,6 @@ page:
   <p>I fully understand it's in a state that I wouldn't even use it over just jinja2 at the moment after the inital generation. The next few major updates are designed to add the following.</p>
   <ul>
     <li>Jinja2 compatability for cutting down further on the amount of individual elements needed while maintaining logic capabilities</li>
-    <li>Flask routing/logic for being able to build the flask routes and functions without having to put them in and insert the config manually</li>  
     <li>Live edit mode to be able to change the config file and have it change the website on file-save (thankfully flask's debug mode should make this pretty easy)</li>
     <li>Source builder file to output the code being run to a source folder of your choosing, for the times there is website specific functionality that hasn't been accounted for yet.</li>
     </ul>
