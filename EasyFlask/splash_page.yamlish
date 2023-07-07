@@ -9,7 +9,7 @@
 #Jinja_Block: *arg (establishes the content of a jinja extension)
 #Jinja_Include: *arg (establishes an include of a jinja file, using content to pass vars)
 
-#Need to add app config and route handling in file.
+#Need to add app config in file.
 #app: #Defines the program file name (it's app.py)
 #  app_config: #**kwarg taker for app.config['key'] = 'value'
 #    **kwargs
@@ -33,7 +33,7 @@ page:
   route_list: ['/', '/index']
   html:
     head:
-      title: Splash Page
+      title: Welcome!
       meta:
         attributes:
           charset: utf-8
@@ -43,21 +43,55 @@ page:
       #   href: link-to-css
     body:
       h1: Welcome to EasyFlask!
-      p: EasyFlask is primarily meant to build an entire flask application through a simple config file, without having to learn or write a massive amount of syntax to get it up and running. This primarily uses a parser like seen in the config for this page for down to earth html coding without having to deal with before/end tags, element/attribute syntax. instead, this is a simple wiremap that takes care of the legwork on the backend.
+      p: EasyFlask is primarily meant to build an entire flask application through a simple config file, without having to learn or write a massive amount of syntax to get it up and running. The primary goal is to hit as close to home as possible in the prototyping stage what you want the website to actually look and feel like, with the code generated already to seamlessly transition into the more detailed aspects, without all the bloat from templates having massive CSS files with random names, having to sort through countless jinja blueprints, etc.
       br:
-      h2: Coming Capabilities
-      p: While it only translates mostly direct HTML at the moment, this will be incorporating jinja2 blueprints to use multiple commonly paired tags and attributes in a snippet-like method, but allows you to lower the amount of typing required, not to mention lowering the brain overload.
+      h2: Then, how is this supposed to work?
+      p: How EasyFlask does this is through a stripped down, modified ruamel yaml parser that I call yamlish to not confuse the two. If you'd like to know more on the specifics, just hit the yamlish tab at the top for a basic rundown. The easiest way to describe how it works is, look at the entire file as whitespace driven, key-value pairs. There are a few yamlish specific keys that help keep everything organized, and those can be seen either in the yamlish tab, or seen through example in the "splash_page.yamlish" config file that shows this website.
+      br:
+      h2: Wait. This site is generated?
+      p: Yes. This entire splash page website is generated from a 1 page config file using EasyFlask, because that level of laziness is why I created the package in the first place. Any ideas on how to be a more optimized form of laziness are welcome. I have multiple ideas on new features to be implemented, they just need the logic half-figured out, mostly just written. If you'd like a sneak peek, take a look in What's Next.
+
       footer:
 page:
-  page_name: secondary_test_page
-  route_list: ['/secondary_test_page']
+  page_name: whats_next
+  route_list: ['/whats_next']
   html:
+    title: What's Next?
     body:
-      p: This is the first test page!
-
+      h1: So what's next for EasyFlask?
+      p: While it mostly only translates direct HTML at the moment, this will be incorporating a combination of html snippets and jinja2 blueprints (per se) to use multiple commonly paired tags and attributes in a snippet-like method, allowing you to lower the amount of typing required, not to mention lowering the brain tax.
+      p: The ideal is to incorporate jinja's extensive templating system by having regular expressive ways to write/insert blocks of jinja without the semi-confusing logic and tedious syntax
+      h3: "The current planned order of features to implement are:"
+      ol:
+        li: Flask app_config and namespace definitions
+        li: Jinja extensions and logic implementation
+        li: Flatpages logic
+        li: Live edit mode where when the yamlish config file is saved, the changes appear on refresh.
+        li: CSS post-processor implementation that takes all CSS in an class-auto tag, creating classes in the most space efficient way possible, while maintaining specificity and as much clarity as possible. This way (when coupled with live mode), there are two options in crafting the css. Could put in the classes you know you'll need, then do the rest as you go, letting the processor sort out the back end.
+        li: Javascript post-processor. Not gonna lie, this scares me a bit to tackle. Being so extensive, there's no way in hell I'll be able to cover all possible implementations, so I'll probably end up making some of the most common types of animations, cookies, etc, giving easy templates to work with, and making sure the streamlining process to inserting custom templates is in absolute MINT condition. 
 page:
-  page_name: third_test_page
-  route_list: ['/third_test_page']
+  page_name: yamlish_explained
+  route_list: ['/yamlish_explained']
   html:
+    head:
+      title: Yamlish Explained
     body:
-      p: This is also test page!
+      h1: So what exactly is Yamlish?
+      p: Yamlish is currently a barebones, modified ruamel yaml parser (courtesy of Anthon's magic on Stack Overflow). It primarily functions off of building a nested tuple array like so [([()])], then pulling out a few contextual keys that keep the data organized/build the structure around HTML, finally parsing element by element through said HTML.
+      p: The easiest way to think about how it's set up, is strip yaml down to whitespace for structure, then keep the key/str(value) format.
+      br:      
+      h1: Yamlish Specific Keys
+      h2: Page creation
+      h3: "page: None"
+      p: Denoting the start of page parsing, every page is turned into it's own object to be called at a later time at the building of each page
+      h3: "page_name: *arg"
+      p: This is used for defining the function name and naming of the html template to be called.
+      h3: "route_list: [*args]"
+      p: Defines the routes to be used to navigate to that particular html page
+      h2: HTML Specific Keys
+      h3: "Content: None"
+      p: Designed to be an outlet to still put text and later inline tags in a concise way
+      h3: "text: *arg"
+      p: a sub key for content that allows for text inside of a tag while still maintaining attributes
+      h3: "Attributes: None"
+      p: takes key/str(value) pairs meant to be inserted as attributes to an html element, formatting them appropriately. Each key can currently take one value.
