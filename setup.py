@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 setup(
     name='EasyFlask',
-    version='1.0',
-    description='Flask generator package from a yaml file',
+    version='1.1',
+    description='Flask generator package from a yamlish file',
     author='TabBackIn',
     author_email='andrewm@tabbackin.com',
     packages=find_packages(),
