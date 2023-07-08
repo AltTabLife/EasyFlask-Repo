@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='EasyFlask',
-    version='1.1',
+    version='1.1.1',
     description='Flask generator package from a yamlish file',
     author='TabBackIn',
     author_email='andrewm@tabbackin.com',

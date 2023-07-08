@@ -7,4 +7,6 @@ This is a basic text file to list the known bugs and features that need to be wo
 
 3. Needs verbose error handling throughout the entire project
 
-4. Need memory management before project gets to big and bricks RAM. Constructs are being rewritten throughout the project since tuples, so the old variables need to be discarded.
+4. Need memory management before gets to big and bricks RAM. Constructs are being rewritten throughout the project since tuples, so the old variables need to be discarded.
+
+5. content-text is outputting it's contents to console, while still writing it.

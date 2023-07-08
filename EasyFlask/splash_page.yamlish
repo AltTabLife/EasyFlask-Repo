@@ -42,6 +42,26 @@ page:
       #   rel: stylesheet
       #   href: link-to-css
     body:
+      div:
+        ul:
+          li:
+            a:
+              attributes:
+                href: /
+              content:
+                text: Splash_page
+          li:
+            a:
+              attributes:
+                href: /whats_next
+              content:
+                text: What's Next
+          li:
+            a:
+              attributes:
+                href: /yamlish_explained
+              content:
+                text: Yamlish Explained
       h1: Welcome to EasyFlask!
       p: EasyFlask is primarily meant to build an entire flask application through a simple config file, without having to learn or write a massive amount of syntax to get it up and running. The primary goal is to hit as close to home as possible in the prototyping stage what you want the website to actually look and feel like, with the code generated already to seamlessly transition into the more detailed aspects, without all the bloat from templates having massive CSS files with random names, having to sort through countless jinja blueprints, etc.
       br:
@@ -58,6 +78,26 @@ page:
   html:
     title: What's Next?
     body:
+      div:
+        ul:
+          li:
+            a:
+              attributes:
+                href: /
+              content:
+                text: Splash_page
+          li:
+            a:
+              attributes:
+                href: /whats_next
+              content:
+                text: What's Next
+          li:
+            a:
+              attributes:
+                href: /yamlish_explained
+              content:
+                text: Yamlish Explained
       h1: So what's next for EasyFlask?
       p: While it mostly only translates direct HTML at the moment, this will be incorporating a combination of html snippets and jinja2 blueprints (per se) to use multiple commonly paired tags and attributes in a snippet-like method, allowing you to lower the amount of typing required, not to mention lowering the brain tax.
       p: The ideal is to incorporate jinja's extensive templating system by having regular expressive ways to write/insert blocks of jinja without the semi-confusing logic and tedious syntax
@@ -76,6 +116,26 @@ page:
     head:
       title: Yamlish Explained
     body:
+      div:
+        ul:
+          li:
+            a:
+              attributes:
+                href: /
+              content:
+                text: Splash_page
+          li:
+            a:
+              attributes:
+                href: /whats_next
+              content:
+                text: What's Next
+          li:
+            a:
+              attributes:
+                href: /yamlish_explained
+              content:
+                text: Yamlish Explained
       h1: So what exactly is Yamlish?
       p: Yamlish is currently a barebones, modified ruamel yaml parser (courtesy of Anthon's magic on Stack Overflow). It primarily functions off of building a nested tuple array like so [([()])], then pulling out a few contextual keys that keep the data organized/build the structure around HTML, finally parsing element by element through said HTML.
       p: The easiest way to think about how it's set up, is strip yaml down to whitespace for structure, then keep the key/str(value) format.

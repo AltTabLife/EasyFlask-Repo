@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     def write_pages(self):
         for page in self.pulled_pages:
-            template_to_write = pathlib.Path(f'output_src/templates/{page.page_name}.html')
+            template_to_write = pathlib.Path(f'{self.output_directory}/templates/{page.page_name}.html')
             with open(template_to_write, 'w') as template:
                 template_string = f'''{page.final_html_string}'''
                 template.write(template_string)
