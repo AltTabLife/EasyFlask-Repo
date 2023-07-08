@@ -4,6 +4,6 @@ from EasyFlask import source_build
 
 
 if __name__ == '__main__':
-    file_in = 'EasyFlask/splash_page.yamlish'
+    file_in = 'splash_page.yamlish'
     output_dir = 'output_src/'
     source_build.full_build(file_in=file_in, output_dir=output_dir)
