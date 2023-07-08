@@ -79,25 +79,23 @@ page:
           li: Now  
           li: be  
           li: inspired  
-        footer:  
+        footer:
+page:
+  page_name: But_are_you_really
+  route_list: ['/but_are_you_really']
+  html:
+    body:
+      Need I write it a third time?
 ```
 
 <h3>Python Example app.py:</h3>
+
+  <p>As of EasyFlask 1.1, the app.py will be auto generated and functioning out the gate using 
   
-  ```py
-  from Flask import Flask, render_template_string  
-  from pathlib import Path  
-  from EasyFlask.html_generator import HTMLGenerator  
+  >EasyFlask.source_build.full_build(file_in, output_dir). 
+  
+  No class initiation required, just pass the string paths for file_in and the output_dir you want the project to end up!
 
-  app = Flask(__name__)  
-
-  @app.route('/')  
-  def index():  
-    file_in = Path('website_config.yaml')  
-    html_generator = HTMLGenerator(file_in)  
-    html_output = html_generator.generate_html()  
-    return render_template_string(html_output)  
-  ```
 <h3>What's coming to EasyFlask next?</h3>
   <p>I fully understand it's in a state that I wouldn't even use it over just jinja2 at the moment after the inital generation. The next few major updates are designed to add the following.</p>
   <ul>
@@ -112,6 +110,6 @@ page:
     <li>Cloning the repo with git</li>
     <li>cd into the EasyFlask-Repo</li>
     <li>run "pip install dist/EasyFlask-1.0.tar.gz"</li>
+    <li>From there, all you have to do is run getting_started.py, cd into output_src/ and type "flask run"</li> 
     </ol>
 
-  <p>If you're not worried about modifying the repo with your own improvements, feel free to download just the .tar.gz and install as normal with pip.</p>
