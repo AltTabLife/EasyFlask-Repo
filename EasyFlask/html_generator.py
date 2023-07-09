@@ -18,7 +18,6 @@ class HTMLGenerator:
 
     def content(self, data):
         ret_val = ''
-        print(data[0])
         if data[0][0] == 'text':
             ret_val += f'{data[0][1]}'
 
