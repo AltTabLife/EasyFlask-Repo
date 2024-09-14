@@ -1,6 +1,6 @@
 **/__pycache__/
 **/EasyFlask.egg-info/
-
+**.venv/
 #Test files
 tester.py
 **/output_src/

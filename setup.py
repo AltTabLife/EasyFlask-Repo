@@ -7,5 +7,5 @@ setup(
     author='TabBackIn',
     author_email='andrewm@tabbackin.com',
     packages=find_packages(),
-    install_requires=['ruamel.yaml', 'pathlib'],
+    install_requires=['ruamel.yaml', 'pathlib', 'kivy'],
 )
