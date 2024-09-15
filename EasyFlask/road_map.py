@@ -1,6 +1,7 @@
 #This file is not necessary, but helps organize the logic going from piece to piece to build the project website as a whole
 
-from EasyFlask.parse_yamlish import parse_yamlish
+from .parse_yamlish import parse_yamlish
+
 from .page_builder import PageBuilder
 from .html_generator import HTMLGenerator
 from .file_writing import FileWriting

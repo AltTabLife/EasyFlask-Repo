@@ -1,0 +1,6 @@
+This project is a fucking mess. I don't know where I am and what the project needs as I didn't take close enough documentation. So what's next?
+
+Time to actually define what I need from this and figure out what my flow is from the roadmap.py
+
+TODO:
+    1. I need a working version to continue using it as it keeps my headspace in a better state. The biggest factor to this currently is a debug mode that works.
